@@ -1,7 +1,4 @@
-import reactImg from '../../assets/react-core-concepts.png';
-
-//importing the stylesheet like this just tells the bundler to include within the app it does not scope this css to this file. It will also apply to other elements within the app. 
-import './Header.css';
+import reactImg from '../assets/react-core-concepts.png';
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -23,3 +20,4 @@ export default function Header() {
     </header>
   );
 }
+

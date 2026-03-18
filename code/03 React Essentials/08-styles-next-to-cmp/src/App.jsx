@@ -5,6 +5,13 @@ import CoreConcept from './components/CoreConcept.jsx';
 function App() {
   return (
     <div>
+      <header>
+            <h1>React Essentials</h1>
+            <p>
+              React concepts you will need for almost any app you are
+              going to build!
+            </p>
+          </header>
       <Header />
       <main>
         <section id="core-concepts">
