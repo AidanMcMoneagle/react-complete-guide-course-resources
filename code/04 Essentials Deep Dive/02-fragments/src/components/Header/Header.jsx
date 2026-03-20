@@ -7,6 +7,7 @@ function genRandomInt(max) {
   return Math.floor(Math.random() * (max + 1));
 }
 
+//when the parent re renders so will Header. This causes the description to change and the image to be reloaded.
 export default function Header() {
   const description = reactDescriptions[genRandomInt(2)];
 

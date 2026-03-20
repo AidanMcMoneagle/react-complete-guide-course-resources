@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Tabs from './Tabs.jsx';
 import TabButton from './TabButton.jsx';
 import Section from './Section.jsx';
 import { EXAMPLES } from '../data.js';
@@ -27,13 +28,16 @@ export default function Examples() {
     );
   }
 
+  //I want to create a wrapper component for the tab buttons and content. 
+  //This should be a reusable component that can be used for any set of tabs and content.
   return (
     <Section title="Examples" id="examples">
-      <menu>
-        <TabButton
+      <Tabs buttons={
+        <>
+       <TabButton
           isSelected={selectedTopic === 'components'}
-          onClick={() => handleSelect('components')}
-        >
+            onClick={() => handleSelect('components')}
+          >
           Components
         </TabButton>
         <TabButton
@@ -54,8 +58,12 @@ export default function Examples() {
         >
           State
         </TabButton>
-      </menu>
+      </>
+      }
+      buttonContainer="menu"
+      >
       {tabContent}
+      </Tabs>
     </Section>
   );
 }
