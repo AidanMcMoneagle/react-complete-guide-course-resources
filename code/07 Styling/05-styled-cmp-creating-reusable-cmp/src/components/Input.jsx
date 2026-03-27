@@ -10,6 +10,8 @@ const Label = styled.label`
   color: ${({ $invalid }) => ($invalid ? '#f87171' : '#6b7280')};
 `;
 
+//styled components is a third party package. It allows us to create reusable components with styles attached to them. 
+//We don't need seperate CSS files and we don't use inline styles. 
 const Input = styled.input`
   width: 100%;
   padding: 0.75rem 1rem;
@@ -21,9 +23,11 @@ const Input = styled.input`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
+//forward additional attributes set as props to the input element. 
 export default function CustomInput({ label, invalid, ...props }) {
   return (
     <p>
+      {/*typical to prefix props with $ when using styled-components so not to clash with HTML standard attributes */}
       <Label $invalid={invalid}>{label}</Label>
       <Input $invalid={invalid} {...props} />
     </p>
