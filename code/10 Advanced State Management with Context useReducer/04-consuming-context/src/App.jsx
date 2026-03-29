@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Header from './components/Header.jsx';
-import Shop from './components/Shop.jsx';
-import Product from './components/Product.jsx';
-import { DUMMY_PRODUCTS } from './dummy-products.js';
-import { CartContext } from './store/shopping-cart-context.jsx';
+import Header from "./components/Header.jsx";
+import Shop from "./components/Shop.jsx";
+import Product from "./components/Product.jsx";
+import { DUMMY_PRODUCTS } from "./dummy-products.js";
+import { CartContext } from "./store/shopping-cart-context.jsx";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
@@ -16,7 +16,7 @@ function App() {
       const updatedItems = [...prevShoppingCart.items];
 
       const existingCartItemIndex = updatedItems.findIndex(
-        (cartItem) => cartItem.id === id
+        (cartItem) => cartItem.id === id,
       );
       const existingCartItem = updatedItems[existingCartItemIndex];
 
@@ -46,7 +46,7 @@ function App() {
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
       const updatedItemIndex = updatedItems.findIndex(
-        (item) => item.id === productId
+        (item) => item.id === productId,
       );
 
       const updatedItem = {
@@ -68,6 +68,8 @@ function App() {
   }
 
   return (
+    //we provide context to components by wrapping them in the Context.Provider component. The Context component is the component returned by the createContext function.
+    //the value prop is used to specify the context value that should be provided to the components that are wrapped by the Provider component. The value can be any JavaScript value, such as an object, array, string, number, etc.
     <CartContext.Provider value={{ items: [] }}>
       <Header
         cart={shoppingCart}
